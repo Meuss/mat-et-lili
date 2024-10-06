@@ -16,6 +16,7 @@
     </style>
 
     @filamentStyles
+    @livewireStyles
     @vite('resources/css/app.css')
 </head>
 
@@ -23,6 +24,7 @@
 {{ $slot }}
 
 @filamentScripts
+@livewireScripts
 @vite('resources/js/app.js')
 </body>
 </html>

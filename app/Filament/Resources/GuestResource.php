@@ -4,10 +4,23 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\GuestResource\Pages;
 use App\Models\Guest;
-use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\Fieldset;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ForceDeleteBulkAction;
+use Filament\Tables\Actions\RestoreBulkAction;
+use Filament\Tables\Actions\ViewAction;
+use Filament\Tables\Columns\CheckboxColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -26,35 +39,35 @@ class GuestResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Grid::make()->schema([
-                    Forms\Components\TextInput::make('first_name')
+                Grid::make()->schema([
+                    TextInput::make('first_name')
                         ->label('Prénom')
                         ->required(),
-                    Forms\Components\TextInput::make('last_name')
+                    TextInput::make('last_name')
                         ->label('Nom')
                         ->required(),
-                    Forms\Components\Checkbox::make('supper')
+                    Checkbox::make('supper')
                         ->label('Présent au souper')
                         ->default(true),
-                    Forms\Components\Select::make('menu')
+                    Select::make('menu')
                         ->label('Menu')
                         ->options([
                             'Carnivore' => 'Carnivore',
                             'Végétarien' => 'Végétarien',
                         ])
                         ->required(),
-                    Forms\Components\Textarea::make('allergies')
+                    Textarea::make('allergies')
                         ->label('Allergies'),
-                    Forms\Components\Checkbox::make('sleep')
+                    Checkbox::make('sleep')
                         ->label('Dort sur place')
                         ->default(false),
-                    Forms\Components\Fieldset::make('Submission')
+                    Fieldset::make('Submission')
                         ->relationship('submission')
                         ->schema([
-                            Forms\Components\TextInput::make('email'),
-                            Forms\Components\TextInput::make('phone'),
-                            Forms\Components\Textarea::make('comment'),
-                        ])
+                            TextInput::make('email'),
+                            TextInput::make('phone'),
+                            Textarea::make('comment'),
+                        ]),
                 ]),
             ]);
     }
@@ -63,31 +76,33 @@ class GuestResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('first_name')
+                TextColumn::make('first_name')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('last_name')
+                TextColumn::make('last_name')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\CheckboxColumn::make('supper')
+                CheckboxColumn::make('supper')
                     ->label('Souper')
                     ->sortable(),
-                Tables\Columns\CheckboxColumn::make('sleep')
+                CheckboxColumn::make('sleep')
                     ->label('Dort sur place')
                     ->sortable(),
             ])
             ->filters([
-                Tables\Filters\TrashedFilter::make(),
+                TrashedFilter::make(),
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+                ViewAction::make()
+                    ->label(''),
+                EditAction::make()
+                    ->label(''),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                    Tables\Actions\ForceDeleteBulkAction::make(),
-                    Tables\Actions\RestoreBulkAction::make(),
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                    ForceDeleteBulkAction::make(),
+                    RestoreBulkAction::make(),
                 ]),
             ]);
     }
