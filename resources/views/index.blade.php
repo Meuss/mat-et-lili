@@ -17,9 +17,22 @@
 
     </head>
     <body>
-        <div class="min-h-screen bg-white flex items-center justify-center">
-            <div class="max-w-2xl w-full p-6 bg-white rounded-lg shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)]">
+        <div class="min-h-screen bg-white flex flex-col items-center justify-center">
+            <section>
+                Titre + photo
+            </section>
+            <section class="h-40">
+                Infos apéro
+            </section>
+            <section class="h-40">
+                Infos souper
+            </section>
+            <section class="h-40">
+                Infos dormir
+                <p>35 CHF, chambres de 4</p>
+            </section>
+            <section class="max-w-2xl w-full p-6 bg-white rounded-lg shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)]">
                 <livewire:guest-submission-form />
-            </div>
+            </section>
     </body>
 </html>
