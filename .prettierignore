@@ -1,0 +1,5 @@
+# ignore everything
+/*
+# do not ignore resources
+!resources/
+!resources/**
