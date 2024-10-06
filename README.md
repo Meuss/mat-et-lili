@@ -11,4 +11,12 @@
 
 ```bash
 npm run dev
+
+npm run prettier
+
+# (alias in zshrc) ./vendor/bin/phpunit
+pint
+
+# (alias in zshrc) ./vendor/bin/phpstan analyse
+phpstan
 ```
