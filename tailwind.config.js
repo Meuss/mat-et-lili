@@ -6,9 +6,20 @@ export default {
     presets: [preset],
     content: [
         './app/Filament/**/*.php',
-        './resources/views/filament/**/*.blade.php',
+        './resources/views/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
     ],
+    theme: {
+        extend: {
+            container: {
+                center: true,
+                padding: '1rem',
+            },
+            fontFamily: {
+                sans: ['Alegreya', 'sans-serif'],
+            },
+        },
+    },
     plugins: [
         forms,
         containerQueries

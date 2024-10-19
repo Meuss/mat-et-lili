@@ -25,7 +25,7 @@ class GuestSubmissionForm extends Component
         $this->guests[] = [
             'first_name' => '',
             'last_name' => '',
-            'supper' => false,
+            'supper' => true,
             'sleep' => false,
             'menu' => '',
             'allergies' => '',
@@ -38,7 +38,7 @@ class GuestSubmissionForm extends Component
         $this->guests[] = [
             'first_name' => '',
             'last_name' => '',
-            'supper' => false,
+            'supper' => true,
             'sleep' => false,
             'menu' => '',
             'allergies' => '',
