@@ -29,7 +29,7 @@
             <div class="container">
                 <section class="min-h-40 py-10">
                     <h3 class="text-xl font-bold mb-4">La cérémonie de mariage</h3>
-                    <p>Château de Gruyères<br>Route de Gruyères 3, 1630 Gruyères</p>
+                    <p>Château de Gruyères<br>Route de Gruyères 31, 1630 Gruyères</p>
                     <p>Samedi 21 Juin 2025<br>14h00</p>
                 </section>
                 <section class="min-h-40 py-10">
