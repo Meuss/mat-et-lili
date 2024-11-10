@@ -25,9 +25,7 @@ class GuestSubmissionForm extends Component
         $this->guests[] = [
             'first_name' => '',
             'last_name' => '',
-            'supper' => true,
             'sleep' => false,
-            'menu' => '',
             'allergies' => '',
         ];
     }
@@ -38,9 +36,7 @@ class GuestSubmissionForm extends Component
         $this->guests[] = [
             'first_name' => '',
             'last_name' => '',
-            'supper' => true,
             'sleep' => false,
-            'menu' => '',
             'allergies' => '',
         ];
     }
@@ -61,7 +57,6 @@ class GuestSubmissionForm extends Component
             'comment' => 'nullable|string',
             'guests.*.first_name' => 'required|string',
             'guests.*.last_name' => 'required|string',
-            'guests.*.menu' => 'required|string',
             'guests.*.allergies' => 'nullable|string',
         ]);
 

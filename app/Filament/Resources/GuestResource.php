@@ -46,16 +46,6 @@ class GuestResource extends Resource
                     TextInput::make('last_name')
                         ->label('Nom')
                         ->required(),
-                    Checkbox::make('supper')
-                        ->label('Présent au souper')
-                        ->default(true),
-                    Select::make('menu')
-                        ->label('Menu')
-                        ->options([
-                            'Carnivore' => 'Carnivore',
-                            'Végétarien' => 'Végétarien',
-                        ])
-                        ->required(),
                     Textarea::make('allergies')
                         ->label('Allergies'),
                     Checkbox::make('sleep')
@@ -81,9 +71,6 @@ class GuestResource extends Resource
                     ->sortable(),
                 TextColumn::make('last_name')
                     ->searchable()
-                    ->sortable(),
-                CheckboxColumn::make('supper')
-                    ->label('Souper')
                     ->sortable(),
                 CheckboxColumn::make('sleep')
                     ->label('Dort sur place')

@@ -11,4 +11,7 @@
 }
 
 @layer utilities {
+    p {
+        margin-bottom: 1rem;
+    }
 }

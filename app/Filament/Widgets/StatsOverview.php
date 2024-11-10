@@ -16,9 +16,6 @@ class StatsOverview extends BaseWidget
             Stat::make('Total des personnes inscrites', $this->getTotal())
                 ->description('Personnes')
                 ->color('success'),
-            Stat::make('Inscrits au souper', $this->getTotalSupper())
-                ->description('ont très faim')
-                ->color('success'),
             Stat::make('Inscrits pour dormir sur place', $this->getTotalSleep())
                 ->description('sont des soiffards')
                 ->color('success'),
@@ -28,11 +25,6 @@ class StatsOverview extends BaseWidget
     public function getTotal(): string
     {
         return (string) Guest::query()->count();
-    }
-
-    public function getTotalSupper(): string
-    {
-        return (string) Guest::query()->where('supper', true)->count();
     }
 
     public function getTotalSleep(): string

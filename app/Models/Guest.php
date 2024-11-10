@@ -20,8 +20,6 @@ class Guest extends Model
     protected $fillable = [
         'first_name',
         'last_name',
-        'supper',
-        'menu',
         'allergies',
         'sleep',
         'submission_id',

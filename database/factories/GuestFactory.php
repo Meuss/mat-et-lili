@@ -19,7 +19,6 @@ class GuestFactory extends Factory
         return [
             'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
-            'supper' => fake()->boolean(),
             'menu' => fake()->randomElement(['Carnivore', 'Végétarien']),
             'allergies' => fake()->optional()->text(),
             'sleep' => fake()->boolean(),
