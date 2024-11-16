@@ -20,3 +20,4 @@ yarn-error.log
 /.vscode
 /.zed
 .php-cs-fixer.cache
+.DS_Store
