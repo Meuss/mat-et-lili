@@ -13,3 +13,7 @@ pint
 # (alias in zshrc) ./vendor/bin/phpstan analyse
 phpstan
 ```
+
+## Deploy
+
+Create a PR to `master` branch, then it will be deployed automatically to Infomaniak.
