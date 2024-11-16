@@ -27,9 +27,9 @@
 
                 <div class="col-span-full border-b border-gray-900/10 pb-6">
                     <div class="mt-5 space-y-5">
-                        <h3 class="text-md font-bold">Invité(s)</h3>
+                        <p class="text-md font-bold">Invité(s)</p>
                         @foreach ($guests as $index => $guest)
-                            <div class="py-5 px-4 bg-gray-50 border border-gray-200 relative">
+                            <div class="py-5 px-4 bg-slate-100 border border-gray-200 relative">
                                 @if (count($guests) > 1)
                                 <button type="button" wire:click="removeGuest({{ $index }})" class="absolute top-0 right-0 text-sm bg-slate-700 px-2 py-1 text-white hover:bg-slate-600">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -57,7 +57,7 @@
                                     </div>
 
                                     <div class="sm:col-span-3">
-                                        <label for="sleep_{{ $index }}" class="block text-sm font-medium leading-6 text-gray-900">Réserver une chambre *</label>
+                                        <label for="sleep_{{ $index }}" class="block text-sm font-medium leading-6 text-gray-900">Je veux dormir sur place *</label>
                                         <input type="checkbox" id="sleep_{{ $index }}" wire:model="guests.{{ $index }}.sleep" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     </div>
                                 </div>

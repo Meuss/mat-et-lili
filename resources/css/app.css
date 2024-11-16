@@ -6,6 +6,9 @@
     [x-cloak] {
         display: none !important;
     }
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-serif text-center;
+    }
 }
 @layer components {
 }
@@ -14,4 +17,13 @@
     p {
         margin-bottom: 1rem;
     }
+}
+
+#banner {
+    background-color: #f8f8f8;
+    text-shadow:
+        0.07em 0 rgba(0,0,0,0.1),
+        0 0.07em rgba(0,0,0,0.1),
+        -0.07em 0 rgba(0,0,0,0.1),
+        0 -0.07em rgba(0,0,0,0.1);
 }
