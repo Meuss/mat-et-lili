@@ -5,14 +5,11 @@
 
     RewriteEngine On
 
-    # Check for environment variable
-    SetEnvIf APP_ENV production is_production
-
-    # Skip redirection for non-production environments
-    RewriteCond %{ENV:is_production} !1
+    # Skip HTTPS and non-www redirection for mat-et-lili.localhost
+    RewriteCond %{HTTP_HOST} ^mat-et-lili\.localhost$ [NC]
     RewriteRule ^ - [L]
 
-    # Force HTTPS and redirect www to non-www for production
+    # Force HTTPS and redirect www to non-www
     RewriteCond %{HTTPS} off [OR]
     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
     RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
