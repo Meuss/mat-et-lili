@@ -100,7 +100,7 @@
                 <section class="mt-20 lg:mt-30">
                     <h3 class="text-4xl mb-6">Les cadeaux</h3>
                     <p>Votre présence sera déjà le plus beau des cadeaux.</p>
-                    <p>Si vous souhaitez participer à notre voyage de noce, une boîte à cartes sera à disposition sur place ou si vous le souhaitez voici nos coordonnées :</p>
+                    <p>Si vous souhaitez participer à notre voyage de noce, une boîte à cartes sera à disposition sur place ou si vous le souhaitez voici nos coordonnées&nbsp;:</p>
                     <p>
                         Iban: CH29 0076 8300 1486 5650 3<br>
                         Mathieu Mauron & Lisianne Brunner<br>
