@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="description" content="Mariage de Mat & Lili, le 25 juin 2025">
 
         <title>Mat & Lili</title>
 
@@ -11,6 +13,20 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Lavishly+Yours&display=swap" rel="stylesheet">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Mat & Lili" />
+        <link rel="manifest" href="/favicons/site.webmanifest" />
+
+        <!-- OG -->
+        <meta property="og:title" content="mat & lili" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mat-et-lili.ch" />
+        <meta property="og:image" content="https://mat-et-lili.ch/og-image.jpg" />
 
         <!-- Styles -->
         @filamentStyles
@@ -76,7 +92,7 @@
                     <p>Au petit matin du dimanche, (sûrement très petit), un petit déjeuner sera servi de 8h-11h.</p>
                     {{-- <h3 class="text-4xl mb-6">Le formulaire</h3>--}}
                     <p>Afin de nous faciliter l'organisation, merci de remplir le formulaire ci-dessous, en y précisant vos particularités alimentaires (allergie, végétarien, …).</p>
-                    <div class="max-w-2xl mt-10 w-full p-6 bg-slate-200 rounded-lg shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)]">
+                    <div class="mx-auto max-w-2xl mt-10 w-full p-6 bg-slate-200 rounded-lg shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)]">
                         <livewire:guest-submission-form />
                     </div>
                 </section>
@@ -102,9 +118,9 @@
                     <p class="text-center">Nous nous réjouissons de vous voir nombreux et de vivre cette belle étape de notre vie à vos côtés.</p>
                     <p class="text-center">On vous embrasse fort!</p>
                     <p class="text-center font-serif text-3xl mt-8 mb-12">Mat & Lili</p>
-                    <div class="flex justify-between">
-                        <p class="mb-0">Mathieu, 078 848 14 53</p>
-                        <p class="mb-0">Lisianne, 078 765 73 54</p>
+                    <div class="flex justify-between flex-wrap text-sm">
+                        <p class="mb-0">Mathieu 078 848 14 53</p>
+                        <p class="mb-0">Lisianne 078 765 73 54</p>
                     </div>
                 </div>
             </section>

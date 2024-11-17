@@ -34,10 +34,6 @@ class SubmissionResource extends Resource
         return $form
             ->schema([
                 Grid::make()->schema([
-                    TextInput::make('email')
-                        ->label('Email')
-                        ->email()
-                        ->required(),
                     TextInput::make('phone')
                         ->label('Téléphone')
                         ->required(),
@@ -51,9 +47,6 @@ class SubmissionResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('email')
-                    ->searchable()
-                    ->sortable(),
                 TextColumn::make('phone')
                     ->searchable()
                     ->sortable(),

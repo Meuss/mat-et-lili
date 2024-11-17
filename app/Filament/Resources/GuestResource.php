@@ -54,7 +54,6 @@ class GuestResource extends Resource
                     Fieldset::make('Submission')
                         ->relationship('submission')
                         ->schema([
-                            TextInput::make('email'),
                             TextInput::make('phone'),
                             Textarea::make('comment'),
                         ]),

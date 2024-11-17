@@ -17,7 +17,6 @@ class SubmissionFactory extends Factory
     public function definition(): array
     {
         return [
-            'email' => fake()->email(),
             'phone' => fake()->phoneNumber(),
             'comment' => fake()->optional()->text(),
         ];
