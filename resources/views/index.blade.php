@@ -87,7 +87,7 @@
                 </section>
 
                 <section class="mt-20 lg:mt-30">
-                    <h3 class="text-4xl mb-6">"Le repo"</h3>
+                    <h3 class="text-4xl mb-6">Le « repos »</h3>
                     <p>Afin de partager avec nous ce festoiement jusqu’au bout de la nuit, tu as la possibilité de dormir sur place, au prix de 35.-/personne. Chambres privatives de 2 ou à 4 à disposition. Infos IBAN en bas de page, ou via Twint.</p>
                     <p>Au petit matin du dimanche, (sûrement très petit), un petit déjeuner sera servi de 8h-11h.</p>
                     {{-- <h3 class="text-4xl mb-6">Le formulaire</h3>--}}
