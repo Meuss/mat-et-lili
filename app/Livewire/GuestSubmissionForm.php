@@ -11,8 +11,6 @@ use Livewire\Component;
 
 class GuestSubmissionForm extends Component
 {
-    public string $email;
-
     public string $phone;
 
     public $comment;
@@ -52,7 +50,6 @@ class GuestSubmissionForm extends Component
     public function submit(): void
     {
         $this->validate([
-            'email' => 'required|email',
             'phone' => 'required|string',
             'comment' => 'nullable|string',
             'guests.*.first_name' => 'required|string',
@@ -62,7 +59,6 @@ class GuestSubmissionForm extends Component
 
         // Create submission
         $submission = Submission::create([
-            'email' => $this->email,
             'phone' => $this->phone,
             'comment' => $this->comment,
         ]);
@@ -75,7 +71,7 @@ class GuestSubmissionForm extends Component
 
         // Reset the form or show a success message
         $this->reset();
-        session()->flash('message', 'Your submission has been successfully saved.');
+        session()->flash('message', 'Merci, on a bien reçu. Pour toute question, n\'hésitez pas à nous contacter directement. Gros bisous!');
     }
 
     public function render(): View|Factory|Application
