@@ -1,11 +1,8 @@
 name: Deploy
 
-# Trigger the workflow on push / pull request events on the master branch
+# Trigger the workflow on push on the master branch
 on:
   push:
-    branches:
-      - master
-  pull_request:
     branches:
       - master
 
@@ -17,18 +14,32 @@ jobs:
     steps:
       # Step 1: Checkout the repository
       - uses: actions/checkout@v2
-      # Step 2: Set up node and install deps
+
+      # Step 2: Set up PHP
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+
+      # Step 3: Install PHP dependencies
+      - name: Install Composer dependencies
+        run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+      # Step 4: Set up Node.js and Install Dependencies
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-      - name: Install dependencies
+
+      - name: Install npm dependencies
         run: npm install
-      # Step 3: Build the assets
+
+      # Step 5: Build assets
       - name: Build assets
         run: npm run build
 
-      # Step 4: Upload built assets as an artifact
+      # Step 6: Upload built assets as an artifact
       - name: Upload assets
         uses: actions/upload-artifact@v3
         with:
