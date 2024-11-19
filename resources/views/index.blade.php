@@ -54,7 +54,7 @@
             <div class="container">
                 <section class="mt-20 lg:mt-30">
                     <h3 class="text-4xl mb-6">L'apéro de mariage</h3>
-                    <p class="text-center">Chères familles, chers amis,</p>
+                    <p>Chères familles, chers amis,</p>
                     <div class="flex flex-col gap-2 mb-6">
                         <div>
                             <p>Nous nous réjouissons d’ores et déjà de partager cette journée avec vous tous! Et pour cela vous êtes conviés à notre apéro de mariage :</p>
@@ -67,27 +67,29 @@
                         </div>
                     </div>
                 </section>
+            </div>
 
-                <section class="mt-10 lg:mt-20">
-                    <div>
-                        <img src="{{ asset('images/ailleurs.jpg') }}" alt="mariage">
-                    </div>
-                </section>
+            <section class="mt-10 lg:mt-20">
+                <div class="sm:container">
+                    <img src="{{ asset('images/ailleurs.jpg') }}" alt="mariage">
+                </div>
+            </section>
 
+            <div class="container">
                 <section class="mt-20 lg:mt-30">
                     <h3 class="text-4xl mb-6">Le souper</h3>
                     <p>Malgré le bonheur que susciterait la présence de nombreux enfants à notre mariage, nous regrettons que le lieu de réception pour le souper ne nous permette pas de les accueillir mais nous nous réjouissons de partager l’apéro de notre mariage avec eux !</p>
                     <p>La fête n’est pas finie! Alors suis-nous à notre souper de célébration qui aura lieu à la <a class="underline" target="_blank" href="https://www.google.com/maps/place/Z%C3%BCrcher+Sch%C3%BClerheim/@46.6189859,7.1757124,373m/data=!3m1!1e3!4m6!3m5!1s0x478e60135fbb5999:0x897233720b76b6d8!8m2!3d46.6186428!4d7.176801!16s%2Fg%2F1tppqwfq?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D">Colonie de Zürich</a><svg class="ml-1 mb-1 size-3 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                         </svg> à Charmey, Route des Arses 60.</p>
-                    <p>Pour toutes propositions farfelues telles qu’animations, jeux… veuillez-vous adresser auprès de notre major de table Richard Remy dit « Petzon » au 079 750 32 50 ou bien par email à
+                    <p>Pour toutes propositions farfelues telles qu’animations, jeux… veuillez-vous adresser auprès de notre major de table Richard Remy dit « Petzon » au 079&nbsp;750&nbsp;32&nbsp;50 ou par email à
                         <a href="mailto:remyr13@gmail.com" target="_blank" class="underline">remyr13@gmail.com</a><svg class="ml-1 mb-1 size-3 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                         </svg>.</p>
                 </section>
 
                 <section class="mt-20 lg:mt-30">
-                    <h3 class="text-4xl mb-6">Le « repos »</h3>
+                    <h3 class="text-4xl mb-6">La nuit de noces</h3>
                     <p>Afin de partager avec nous ce festoiement jusqu’au bout de la nuit, tu as la possibilité de dormir sur place, au prix de 35.-/personne. Chambres privatives de 2 ou à 4 à disposition. Infos IBAN en bas de page, ou via Twint.</p>
                     <p>Au petit matin du dimanche, (sûrement très petit), un petit déjeuner sera servi de 8h-11h.</p>
                     {{-- <h3 class="text-4xl mb-6">Le formulaire</h3>--}}
@@ -102,7 +104,7 @@
                     <p>Votre présence sera déjà le plus beau des cadeaux.</p>
                     <p>Si vous souhaitez participer à notre voyage de noce, une boîte à cartes sera à disposition sur place ou si vous le souhaitez voici nos coordonnées&nbsp;:</p>
                     <p>
-                        Iban: CH29 0076 8300 1486 5650 3<br>
+                        Iban: CH29&nbsp;0076&nbsp;8300&nbsp;1486&nbsp;5650&nbsp;3<br>
                         Mathieu Mauron & Lisianne Brunner<br>
                         Rue de Saletta 73, 1632 Riaz<br>
                         Banque cantonale de fribourg<br>
@@ -118,10 +120,6 @@
                     <p class="text-center">Nous nous réjouissons de vous voir nombreux et de vivre cette belle étape de notre vie à vos côtés.</p>
                     <p class="text-center">On vous embrasse fort!</p>
                     <p class="text-center font-serif text-3xl mt-8 mb-12">Mat & Lili</p>
-                    <div class="flex justify-between flex-wrap text-sm">
-                        <p class="mb-0">Mathieu 078 848 14 53</p>
-                        <p class="mb-0">Lisianne 078 765 73 54</p>
-                    </div>
                 </div>
             </section>
 
