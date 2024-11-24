@@ -4,11 +4,7 @@
     <title>Inscription Mariage</title>
 </head>
 <body>
-<p><strong>Tel:</strong> {{ $submission->phone }}</p>
-@if($submission->comment)
-    <p><strong>Commentaire:</strong> {{ $submission->comment }}</p>
-@endif
-<h3>Personne(s) inscrites:</h3>
+<h3>Personne(s) inscrite(s):</h3>
 <ul>
     @foreach($guests as $guest)
         <li>
@@ -23,5 +19,9 @@
         </li>
     @endforeach
 </ul>
+<p><strong>Tel:</strong> {{ $submission->phone }}</p>
+@if($submission->comment)
+    <p><strong>Commentaire:</strong> {{ $submission->comment }}</p>
+@endif
 </body>
 </html>
