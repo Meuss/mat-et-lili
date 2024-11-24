@@ -5,14 +5,12 @@
 
     RewriteEngine On
 
-    # Skip HTTPS and non-www redirection for mat-et-lili.localhost
-    RewriteCond %{HTTP_HOST} ^mat-et-lili\.localhost$ [NC]
-    RewriteRule ^ - [L]
-
-    # Force HTTPS and redirect www to non-www
-    RewriteCond %{HTTPS} off [OR]
-    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+    # Force HTTPS if not localhost
+    RewriteCond %{HTTP_HOST} !^mat-et-lili\.localhost [NC]
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteCond %{HTTPS} !on
+    RewriteCond %{REQUEST_SCHEME} !https
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
