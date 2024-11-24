@@ -23,7 +23,7 @@
         <link rel="manifest" href="/favicons/site.webmanifest" />
 
         <!-- OG -->
-        <meta property="og:title" content="mat & lili" />
+        <meta property="og:title" content="Mat & Lili" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mat-et-lili.ch" />
         <meta property="og:image" content="https://mat-et-lili.ch/og-image.jpg" />

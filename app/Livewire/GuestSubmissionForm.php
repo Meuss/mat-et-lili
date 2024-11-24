@@ -4,6 +4,10 @@ namespace App\Livewire;
 
 use App\Models\Guest;
 use App\Models\Submission;
+use App\Mail\SubmissionReceived;
+use Exception;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
@@ -57,21 +61,35 @@ class GuestSubmissionForm extends Component
             'guests.*.allergies' => 'nullable|string',
         ]);
 
-        // Create submission
-        $submission = Submission::create([
-            'phone' => $this->phone,
-            'comment' => $this->comment,
-        ]);
-
-        // Create guests
-        foreach ($this->guests as $guestData) {
-            $guestData['submission_id'] = $submission->id;
-            Guest::create($guestData);
+        if (count($this->guests) === 0) {
+            session()->flash('message', 'Vous devez ajouter au moins un invité.');
+            return;
         }
 
-        // Reset the form or show a success message
-        $this->reset();
-        session()->flash('message', 'Merci, on a bien reçu. Pour toute question, n\'hésitez pas à nous contacter directement. Gros bisous!');
+        try {
+            // Create submission
+            $submission = Submission::create([
+                'phone' => $this->phone,
+                'comment' => $this->comment,
+            ]);
+            // Create guests
+            foreach ($this->guests as $guestData) {
+                $guestData['submission_id'] = $submission->id;
+                Guest::create($guestData);
+            }
+            // Send a notification email
+            Mail::to('mariage@mat-et-lili.ch')
+                ->bcc('thomas.miller147@gmail.com')
+                ->send(new SubmissionReceived($submission, $this->guests));
+
+            // Show a success message
+            session()->flash('message-success', 'Merci, on a bien reçu. Pour toute question, n\'hésitez pas à nous contacter directement. Gros bisous!');
+        } catch (Exception $e) {
+            Log::error('Submission Error: ' . $e->getMessage());
+            session()->flash('message', 'Une erreur est survenue. Veuillez réessayer.');
+            return;
+        }
+
     }
 
     public function render(): View|Factory|Application
