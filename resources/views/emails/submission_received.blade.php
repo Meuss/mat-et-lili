@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>New Submission Received</title>
+    <title>Inscription Mariage</title>
 </head>
 <body>
-<h1>New Submission Received</h1>
-<p><strong>Phone:</strong> {{ $submission->phone }}</p>
+<p><strong>Tel:</strong> {{ $submission->phone }}</p>
 @if($submission->comment)
-    <p><strong>Comment:</strong> {{ $submission->comment }}</p>
+    <p><strong>Commentaire:</strong> {{ $submission->comment }}</p>
 @endif
-<h2>Guests:</h2>
+<h3>Personne(s) inscrites:</h3>
 <ul>
     @foreach($guests as $guest)
         <li>
-            {{ $guest['first_name'] }} {{ $guest['last_name'] }}
-            - Sleep: {{ $guest['sleep'] ? 'Yes' : 'No' }}
-            @if($guest['allergies'])
-                - Allergies: {{ $guest['allergies'] }}
-            @endif
+            <p>
+                {{ $guest['first_name'] }} {{ $guest['last_name'] }}
+                <br>Dormir sur place: {{ $guest['sleep'] ? 'Oui' : 'Non' }}
+                @if($guest['allergies'])
+                    <br>Particularités alimentaires: {{ $guest['allergies'] }}
+                @endif
+                <br><br>
+            </p>
         </li>
     @endforeach
 </ul>
