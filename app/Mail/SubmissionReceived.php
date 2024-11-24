@@ -2,26 +2,23 @@
 
 namespace App\Mail;
 
-use Illuminate\Bus\Queueable;
 use App\Models\Submission;
+use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class SubmissionReceived extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     public Submission $submission;
     public array $guests;
 
     /**
      * Create a new message instance.
-     *
-     * @param Submission $submission
-     * @param array $guests
      */
     public function __construct(Submission $submission, array $guests)
     {

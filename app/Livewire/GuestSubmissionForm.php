@@ -2,15 +2,14 @@
 
 namespace App\Livewire;
 
+use App\Mail\SubmissionReceived;
 use App\Models\Guest;
 use App\Models\Submission;
-use App\Mail\SubmissionReceived;
-use Exception;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class GuestSubmissionForm extends Component
@@ -61,8 +60,9 @@ class GuestSubmissionForm extends Component
             'guests.*.allergies' => 'nullable|string',
         ]);
 
-        if (count($this->guests) === 0) {
+        if (0 === count($this->guests)) {
             session()->flash('message', 'Vous devez ajouter au moins un invité.');
+
             return;
         }
 
@@ -84,12 +84,12 @@ class GuestSubmissionForm extends Component
 
             // Show a success message
             session()->flash('message-success', 'Merci, on a bien reçu. Pour toute question, n\'hésitez pas à nous contacter directement. Gros bisous!');
-        } catch (Exception $e) {
-            Log::error('Submission Error: ' . $e->getMessage());
+        } catch (\Exception $e) {
+            Log::error('Submission Error: '.$e->getMessage());
             session()->flash('message', 'Une erreur est survenue. Veuillez réessayer.');
+
             return;
         }
-
     }
 
     public function render(): View|Factory|Application

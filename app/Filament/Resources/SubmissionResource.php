@@ -25,9 +25,10 @@ class SubmissionResource extends Resource
 {
     protected static ?string $model = Submission::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-envelope';
-
-    protected static ?string $navigationLabel = 'Détails soumissions';
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
 
     public static function form(Form $form): Form
     {

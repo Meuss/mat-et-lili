@@ -7,7 +7,6 @@ use App\Models\Guest;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -31,6 +30,9 @@ class GuestResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user';
 
+    protected static ?string $icon = 'heroicon-o-user';
+
+    protected static ?string $label = 'Invités';
     protected static ?string $navigationLabel = 'Invités';
 
     protected static ?string $title = 'Invité';
@@ -72,8 +74,17 @@ class GuestResource extends Resource
                     ->searchable()
                     ->sortable(),
                 CheckboxColumn::make('sleep')
-                    ->label('Dort sur place')
+                    ->label('Dort')
                     ->sortable(),
+                TextColumn::make('allergies')
+                    ->limit(30),
+
+                // Include submission data
+                TextColumn::make('submission.comment')
+                    ->label('Commentaire')
+                    ->limit(30),
+                TextColumn::make('submission.phone')
+                    ->label('Téléphone'),
             ])
             ->filters([
                 TrashedFilter::make(),
@@ -90,7 +101,8 @@ class GuestResource extends Resource
                     ForceDeleteBulkAction::make(),
                     RestoreBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->paginated(50);
     }
 
     public static function getRelations(): array
